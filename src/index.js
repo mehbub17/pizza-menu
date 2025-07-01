@@ -79,7 +79,21 @@ function Footer() {
     // return React.createElement('footer',null,'We are currently open!')
     // nice way
 
-    return <footer> {new Date().toLocaleString()}.We are currently open! </footer>
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closeHour = 22;
+
+    let openStatus;
+
+    if(hour >=openHour && hour <=closeHour)
+        openStatus = "We are currently Open"
+    else
+        openStatus = "Sorry, We are currently closed."
+
+
+    return(
+      <footer> {new Date().toLocaleString()}{openStatus} </footer>
+    )
 }
 
 
