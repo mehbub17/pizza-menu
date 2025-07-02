@@ -59,7 +59,9 @@ function App() {
 
 function Header() {
 
-    return <h1>First Pizza Then Life</h1>
+  //styling components in jsx
+
+    return <h1 style={{color: "red", fontSize: "50px",textTransform: "uppercase"}}>First Pizza Then Life</h1>
 }
 
 function Menu() {
