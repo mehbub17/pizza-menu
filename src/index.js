@@ -59,9 +59,10 @@ function App() {
 
 function Header() {
 
-  //styling components in jsx
+  //styling components in jsx --> properties is js object
+    const style={color: "red", fontSize: "50px",textTransform: "uppercase"};
 
-    return <h1 style={{color: "red", fontSize: "50px",textTransform: "uppercase"}}>First Pizza Then Life</h1>
+    return <h1 style={style}>First Pizza Then Life</h1>
 }
 
 function Menu() {
