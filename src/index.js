@@ -1,6 +1,7 @@
 
 import React from 'react';
 import ReactDOM from "react-dom/client";
+import "./index.css";
 
 
 const pizzaData = [
@@ -50,7 +51,7 @@ const pizzaData = [
 
 
 function App() {
-    return <div>
+    return <div className='container'>
         <Header  />
         <Menu  />
         <Footer />
@@ -60,20 +61,25 @@ function App() {
 function Header() {
 
   //styling components in jsx --> properties is js object
-    const style={color: "red", fontSize: "50px",textTransform: "uppercase"};
+    // const style={color: "red", fontSize: "50px",textTransform: "uppercase"};
+    const style={};
 
-    return <h1 style={style}>First Pizza Then Life</h1>
+    return (
+      <header className='header'>
+        <h1 style={style} >First Pizza Then Life</h1>
+      </header>
+    )
 }
 
 function Menu() {
 
-    return <div>
+    return <main className='menu'>
         <h2>Our Menu</h2>
         <Pizza />
         <Pizza />
         <Pizza />
         <Pizza />
-    </div>
+    </main>
 
 }
 
@@ -97,7 +103,7 @@ function Footer() {
 
 
     return(
-      <footer> {new Date().toLocaleString()}{openStatus} </footer>
+      <footer className='footer'> {new Date().toLocaleString()}{openStatus} </footer>
     )
 }
 
