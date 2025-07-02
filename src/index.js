@@ -85,7 +85,9 @@ function Footer() {
 
     let openStatus;
 
-    if(hour >=openHour && hour <=closeHour)
+    const isOpen = hour >=openHour && hour <=closeHour;
+
+    if(isOpen)
         openStatus = "We are currently Open"
     else
         openStatus = "Sorry, We are currently closed."
