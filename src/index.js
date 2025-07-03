@@ -81,6 +81,15 @@ function Menu() {
           name='Focaccia'
           ingredients='Bread with italian olive oil and rosemary' 
           photoName='pizzas/focaccia.jpg' price='$6'/>
+
+
+        <Pizza 
+          name= "Pizza Salamino"
+          ingredients= "Tomato, mozarella, and pepperoni"
+          price= '$15'
+          photoName= "pizzas/salamino.jpg"/>
+
+        
     </main>
 
     )
