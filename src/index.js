@@ -73,17 +73,21 @@ function Header() {
 
 function Menu() {
 
+  const pizzas = pizzaData;
+
     return (
     
       <main className="menu">
         <h2>Our Menu</h2>
 
-      <ul className='pizzas'>
+      {pizzas.length>0 && (
+        <ul className='pizzas'>
           {pizzaData.map((pizza)=> (
             <Pizza pizzaObject={pizza} key={pizza.name} />
           )
           )}
       </ul>
+      )}
 
 
         {/* <Pizza 
@@ -130,20 +134,23 @@ function Footer() {
 
     const hour = new Date().getHours();
     const openHour = 12;
-    const closeHour = 22;
-
-    let openStatus;
+    const closeHour = 22
 
     const isOpen = hour >=openHour && hour <=closeHour;
 
-    if(isOpen)
-        openStatus = "We are currently Open"
-    else
-        openStatus = "Sorry, We are currently closed."
+    // if(isOpen)
+    //     openStatus = "   We are currently Open"
+    // else
+    //     openStatus = "   Sorry, We are currently closed."
 
 
     return(
-      <footer className='footer'> {new Date().toLocaleString()}{openStatus} </footer>
+      <footer className='footer'> {isOpen &&(
+        <div className='order'>
+          <p>We are currently Open. Closing in {closeHour-hour} hour</p>
+          <button className='btn'>Order Now</button>
+        </div>
+      )} </footer>
     )
 }
 
